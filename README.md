@@ -1,6 +1,8 @@
-# btc-wallet-generator
+# BOILERPLATE DOCKERISED MERN
 
-This generates BTC wallet address, keys and other required fields
+- A node server
+- A mongodb spun up in docker
+- React apps in clents. User and Admin
 
 git config user.name "AmaarHassanCS"
 git config user.email "amaarhassancs@gmail.com"
