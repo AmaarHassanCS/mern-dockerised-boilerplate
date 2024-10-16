@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - '27017:27017'
+
+  server:
+    build:
+      context: ./server
+    restart: always
+    ports:
+      - '5000:5000'
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/btc_address_management
+    depends_on:
+      - mongo
+
+  client_user:
+    build:
+      context: ./client/user
+    restart: always
+    ports:
+      - '3000:80'
+
+  client_admin:
+    build:
+      context: ./client/admin
+    restart: always
+    ports:
+      - '4000:80'
